@@ -1,3 +1,5 @@
+require 'csv'
+
 class Extractor
   attr_reader :file
 
@@ -6,7 +8,8 @@ class Extractor
   end
 
   def read
-    CSV.foreach(file, col_sep: ';', quote_char: 'x\00') do |row|
+    CSV.foreach(file.tempfile, col_sep: ';', liberal_parsing: true) do |row|
       Builder::Expense.new(row).save
+    end
   end
 end
