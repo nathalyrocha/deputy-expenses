@@ -1,2 +1,32 @@
-<h1>Expenses#index</h1>
-<p>Find me in app/views/expenses/index.html.erb</p>
+<div class="container-fluid">
+  <header>
+    <%= image_tag 'deputy_expense_logo.png' %>
+    <%= link_to 'Voltar', deputies_path, class: 'link-index' %>
+  </header>
+
+  <div class="content">
+    <h1>Lista de despesas - <%= @deputy.name %> </h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Descrição</th>
+          <th scope="col">Valor líquido</th>
+          <th scope="col">Data da emissão</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @expenses.each do |expense| %>
+          <tr>
+            <td><%= expense.description %></td>
+            <td><%= number_to_currency(expense.net_value, unit: 'R$') %></td>
+            <td><%= date_formatter(expense.emission_date) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @expenses, theme: 'twitter-bootstrap-4' %>
+  </div>
+</div>
