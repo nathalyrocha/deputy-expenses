@@ -6,6 +6,6 @@ class Parser::Party
   end
 
   def name
-    line[0]
+    line[6]
   end
 end
