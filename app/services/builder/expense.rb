@@ -8,13 +8,22 @@ class Builder::Expense
 
   def save
     return unless valid?
+
     expense
   end
 
   private
 
   def valid?
-    deputy.valid? && provider.valid?
+    rj? && cpf?
+  end
+
+  def rj?
+    line[5] == "RJ"
+  end
+
+  def cpf?
+    line[1].present?
   end
 
   def party
@@ -22,11 +31,11 @@ class Builder::Expense
   end
 
   def provider
-    @provider = Builder::Provider.new(line).call
+    @provider ||= Builder::Provider.new(line).call
   end
 
   def deputy
-    @deputy = Builder::Deputy.new(line, party).call
+    @deputy ||= Builder::Deputy.new(line, party).call
   end
 
   def expense
