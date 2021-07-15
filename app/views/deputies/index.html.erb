@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <header>
+    <%= image_tag 'deputy_expense_logo.png' %>
+    <%= link_to 'Fazer upload do arquivo', new_upload_path, class: 'link-upload' %>
+  </header>
+
+  <div class="content">
+    <h1>Lista de deputados - RJ</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Deputado</th>
+          <th scope="col">Partido</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @deputies.each do |deputy| %>
+          <tr>
+            <td><%= deputy.name %></td>
+            <td><%= deputy.party.name %></td>
+            <td>
+              <%= link_to '<i class="far fa-eye"></i>'.html_safe, deputy_expenses_path(deputy) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @deputies, theme: 'twitter-bootstrap-4' %>
+  </div>
+</div>
