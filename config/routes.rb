@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
-  root "expenses#index"
-  resources :expenses
+  root "deputies#index" 
+
+  resources :uploads
+
+  resources :deputies do
+    resources :expenses
+  end
 end
