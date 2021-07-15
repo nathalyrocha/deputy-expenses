@@ -1,5 +1,5 @@
 class Builder::Deputy
-  attr_reader :line, :parser
+  attr_reader :line, :parser, :party
 
   def initialize(line, party, parser = Parser::Deputy)
     @line = line
