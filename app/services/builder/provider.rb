@@ -3,10 +3,10 @@ class Builder::Provider
 
   def initialize(line, parser = Parser::Provider)
     @line = line
-    @parse = parser.new(line)
+    @parser = parser.new(line)
   end
 
   def call
-    ::Provider.find_or_create_by(name: parse.name)
+    ::Provider.find_or_create_by(name: parser.name)
   end
 end
