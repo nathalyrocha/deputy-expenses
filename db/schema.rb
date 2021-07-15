@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_07_15_011846) do
   end
 
   create_table "expenses", force: :cascade do |t|
-    t.string "net_value"
+    t.decimal "net_value", precision: 10, scale: 2
     t.date "emission_date"
     t.string "description"
     t.integer "provider_id", null: false
