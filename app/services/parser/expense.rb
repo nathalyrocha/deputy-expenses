@@ -10,7 +10,7 @@ class Parser::Expense
   end
 
   def emission_date
-    DateTime.parse(line[16])
+    DateTime.parse(line[16]) if line[16].present?
   end
 
   def description
