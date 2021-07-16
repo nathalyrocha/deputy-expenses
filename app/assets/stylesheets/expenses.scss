@@ -37,6 +37,7 @@ header {
     &:hover {
       transition: 0.5s;
       opacity: 70%;
+      color: aliceblue;
     }
   }
 }
@@ -82,6 +83,7 @@ table {
   }
 
   td {
+    width: 43%;
     color: rgb(51, 51, 51);
     font-weight: 400;
     padding: 12px 16px !important;
@@ -92,6 +94,9 @@ table {
     }
   }
 
+  .table-icon {
+    width: 6%;
+  }
 }
 
 .pagination {
@@ -110,5 +115,24 @@ table {
       transition: 0.5s;
       color: #071a4a;
     }
+  }
+}
+
+.div-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+
+  h1 {
+    margin-bottom: 32px;
+    font-size: 32px;
+    color: rgb(51, 51, 51);
+  }
+
+  .btn {
+    background: linear-gradient(98.97deg, #071846 0%, #19398A 100%);
+    border: 0;
   }
 }
