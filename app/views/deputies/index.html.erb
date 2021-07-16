@@ -10,8 +10,8 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Deputado</th>
-          <th scope="col">Partido</th>
+          <th scope="col">DEPUTADO</th>
+          <th scope="col">PARTIDO</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -21,7 +21,7 @@
           <tr>
             <td><%= deputy.name %></td>
             <td><%= deputy.party.name %></td>
-            <td>
+            <td class="table-icon">
               <%= link_to '<i class="far fa-eye"></i>'.html_safe, deputy_expenses_path(deputy) %>
             </td>
           </tr>
