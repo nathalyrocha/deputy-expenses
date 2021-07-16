@@ -6,6 +6,6 @@ class Parser::Provider
   end
 
   def name
-    line[0]
+    line[12]
   end
 end
