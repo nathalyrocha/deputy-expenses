@@ -9,7 +9,9 @@ class Extractor
 
   def read
     CSV.foreach(file.tempfile, col_sep: ';', liberal_parsing: true) do |row|
-      Builder::Expense.new(row).save
+      Builder::Expense.new(
+        row.map { _1.gsub('"', '') }
+      ).save
     end
   end
 end
