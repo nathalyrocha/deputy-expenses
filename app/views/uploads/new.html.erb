@@ -4,14 +4,14 @@
     <%= link_to 'Voltar', deputies_path, class: 'link-index' %>
   </header>
 
-  <h1>Upload your file here:</h1>
+  <div class="div-center">
+    <h1>Upload your file here:</h1>
 
-  <div id="file_field">
-    <%= form_with url: '/uploads' do |form| %>
-      <%= form.file_field :file %>
-      <%= form.submit 'Upload', class: 'btn btn-primary' %>
-    <% end %>
+    <div id="file_field">
+      <%= form_with url: '/uploads' do |form| %>
+        <%= form.file_field :file %>
+        <%= form.submit 'Upload', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
   </div>
-
-  
 </div>
