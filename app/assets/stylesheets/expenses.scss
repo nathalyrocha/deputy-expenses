@@ -1,3 +1,114 @@
 // Place all the styles related to the Expenses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+body {
+  background: rgb(251, 253, 255);
+}
+
+header {
+  background: linear-gradient(90deg, rgba(0, 13, 47, 0.946237) 0%, #071A4A 51.56%, #000D2F 100%);
+  padding: 16px 0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  img {
+    width: 150px;
+  }
+
+  a {
+    text-decoration: none;
+    color: aliceblue;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 16px;
+    border-radius: 3px;
+    border: 0.5px solid rgba(240, 248, 255, 0.185);
+
+    &:hover {
+      transition: 0.5s;
+      opacity: 70%;
+    }
+  }
+}
+
+.container-fluid {
+  padding: 0 !important;
+}
+
+.content {
+  margin: 72px auto;
+  padding: 8px;
+  width: 60%;
+  min-height: 70vh;
+  border-radius: 5px;
+  background: rgb(251, 253, 255);
+  box-shadow: 0px 4px 20px rgba(9, 29, 83, 0.336);
+
+
+  h1 {
+    background: #071a4a83;
+    padding: 16px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: aliceblue;
+
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+table {
+  margin-bottom: 0 !important;
+  border-collapse: collapse;
+  width: 100%;
+
+  th {
+    background: #7592db5d;
+    color: rgb(51, 51, 51);
+    font-weight: 600;
+    padding: 8px 16px;
+    border-bottom: 1px solid #071a4a83 !important;
+    text-align: left;
+  }
+
+  td {
+    color: rgb(51, 51, 51);
+    font-weight: 400;
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #dde1f3;
+
+    a {
+      color: #5e94c3dc;
+    }
+  }
+
+}
+
+.pagination {
+  justify-content: center;
+  margin: 16px 0 0 0;
+
+  .page-item.active .page-link {
+    background-color: #081a4aa1;
+    border-color: #081a4aa1;
+  }
+
+  .page-link {
+    color: #071a4a;
+
+    &:hover {
+      transition: 0.5s;
+      color: #071a4a;
+    }
+  }
+}
