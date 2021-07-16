@@ -11,6 +11,7 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'pry'
+gem "chartkick"
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -25,14 +26,15 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rspec-rails', '~> 4.0.2'
-  gem 'database_cleaner'
-  gem 'factory_bot_rails'
 end
 
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
