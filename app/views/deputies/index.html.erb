@@ -12,7 +12,7 @@
         <%= text_field_tag(:search, params[:search]) %>
         <%= submit_tag("Pesquisar") %>
         <% if params[:search].present? %>
-          <%= link_to 'Limpar pesquisa', deputies_path %>
+          <%= link_to 'Limpar pesquisa', deputies_path, class: 'clear-search' %>
         <% end %>
       <% end %>
     </div>
@@ -40,6 +40,12 @@
         <% end %>
       </tbody>
     </table>
+
+    <% if @deputies.each.size == 0 %>
+      <div class="message-table">
+        <p>Nenhum resultado encontrado</p>
+      </div>
+    <% end %>
 
     <%= paginate @deputies, theme: 'twitter-bootstrap-4' %>
   </div>
