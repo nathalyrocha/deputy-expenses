@@ -40,18 +40,23 @@
 
   <div class="content">
     <div class="chart-container">
-      <h4>MAIOR VALOR DE DESPESA POR MÊS</h4>
+      <h4>MAIOR VALOR DE DESPESA NO MÊS</h4>
       <%= column_chart @charts.higher_expense_per_month %>
     </div>
 
     <div class="chart-container">
-      <h4>MAIOR DESPESA DO ANO</h4>
+      <h4>TOTAL DE DESPESAS NO MÊS</h4>
+      <%= area_chart @charts.total_expense_per_month %>
+    </div>
+
+    <div class="chart-container">
+      <h4>MAIOR VALOR DE DESPESA NO ANO</h4>
       <%= column_chart @charts.higher_expense_per_year %>
     </div>
 
     <div class="chart-container">
-      <h4>TOTAL DE DESPESAS POR MÊS</h4>
-      <%= area_chart @charts.total_expense_per_month %>
+      <h4>TOTAL DE DESPESAS NO ANO</h4>
+      <%= column_chart @charts.total_expense_per_year %>
     </div>
   </div>
 </div>
