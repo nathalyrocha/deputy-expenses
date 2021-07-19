@@ -18,6 +18,7 @@
     <table class="table">
       <thead>
         <tr>
+          <th scope="col">FORNECEDOR</th>
           <th scope="col">DESCRIÇÃO</th>
           <th scope="col">VALOR LÍQUIDO</th>
           <th scope="col">DATA/EMISSÃO</th>
@@ -27,6 +28,7 @@
       <tbody>
         <% @expenses.each do |expense| %>
           <tr>
+            <td><%= expense.provider.name %></td>
             <td><%= expense.description %></td>
             <td><%= number_to_currency(expense.net_value, unit: 'R$') %></td>
             <td><%= date_formatter(expense.emission_date) %></td>
