@@ -24,5 +24,9 @@ RSpec.describe Parser::Deputy do
     it 'extracts state' do
       expect(subject.state).to eq 'RJ'
     end
+
+    it 'extracts avatar ID' do
+      expect(subject.avatar_id).to eq '214694'
+    end
   end
 end
