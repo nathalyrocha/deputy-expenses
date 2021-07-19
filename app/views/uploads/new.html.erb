@@ -8,8 +8,8 @@
     <h1>Upload your file here:</h1>
 
     <div id="file_field">
-      <%= form_with url: '/uploads' do |form| %>
-        <%= form.file_field :file %>
+      <%= form_with model: @upload do |form| %>
+        <%= form.file_field :document %>
         <%= form.submit 'Upload', class: 'btn btn-primary' %>
       <% end %>
     </div>
