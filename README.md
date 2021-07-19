@@ -1,24 +1,20 @@
-# README
+# Deputy Expenses
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+No Deputy Expenses é possível visualizar todos os gastos dos deputados do estado do Rio de Janeiro no ano de 2020. Para isso, basta entrar na aplicação (https://deputy-expenses.herokuapp.com/deputies) fazer o upload do arquivo CSV(https://dadosabertos.camara.leg.br/swagger/api.html#staticfile) do ano de 2020 e assim terá a listagem de todos os deputados, podendo pesquisar por nome, partido ou utilizando a paginação da tabela.
+Clicando em um deputado, você terá a lista detalhada de todas as suas despesas do ano, com o nome do fornecedor, descrição da despesa, valor líquido e a data de emissão da mesma, e na mesma tela terá também gráficos para melhor visualização desses gastos.
 
-Things you may want to cover:
+# Tecnologias usadas:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby 2.7.2
+* Rails 6.0.3
+* Webpacker 4.0
+* Redis
+* Chartkick
+* Groupdate
+* Sidekiq
+* AWS SDK
+* Friendlyid
+* Kaminari
+* Jquery
+* Bootstrap
+* RSpec
