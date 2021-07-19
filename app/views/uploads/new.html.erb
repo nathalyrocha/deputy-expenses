@@ -5,12 +5,12 @@
   </header>
 
   <div class="div-center">
-    <h1>Upload your file here:</h1>
+    <h1>Faça upload do seu arquivo aqui:</h1>
 
     <div id="file_field">
       <%= form_with model: @upload do |form| %>
         <%= form.file_field :document %>
-        <%= form.submit 'Upload', class: 'btn btn-primary' %>
+        <%= form.submit 'Upload', data: { disable_with: 'Enviando...' }, class: 'btn btn-primary' %>
       <% end %>
     </div>
   </div>
