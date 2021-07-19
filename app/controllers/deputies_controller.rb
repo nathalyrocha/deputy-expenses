@@ -1,5 +1,5 @@
 class DeputiesController < ApplicationController
   def index
-    @deputies = Deputy.includes(:party).page params[:page]
+    @deputies = Deputy.includes(:party).search(params[:search]).page params[:page]
   end
 end

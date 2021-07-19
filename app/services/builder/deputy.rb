@@ -12,7 +12,8 @@ class Builder::Deputy
       name: parser.name, 
       cpf: parser.cpf, 
       party: party,
-      state: parser.state 
+      state: parser.state,
+      avatar_id: parser.avatar_id
     )
   end
 end

@@ -16,4 +16,8 @@ class Parser::Deputy
   def state
     line[5]
   end
+
+  def avatar_id
+    line[2]
+  end
 end

@@ -1,4 +1,7 @@
 class Deputy < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+  
   paginates_per 10
 
   validates :name, :cpf, :state, :party_id, presence: true
@@ -8,6 +11,18 @@ class Deputy < ApplicationRecord
 
   belongs_to :party
   has_many :expenses, dependent: :destroy
+
+  def photo
+    "https://www.camara.leg.br/internet/deputado/bandep/#{avatar_id}.jpg"
+  end
+
+  def self.search(search)
+    if search
+      joins(:party).where(["deputies.name ILIKE ? OR parties.name ILIKE ?", "%#{search}%", "%#{search}%"])
+    else
+      all
+    end
+  end
 
   private
 

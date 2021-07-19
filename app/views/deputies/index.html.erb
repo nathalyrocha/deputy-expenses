@@ -5,11 +5,22 @@
   </header>
 
   <div class="content">
-    <h1>Lista de deputados - RJ</h1>
+    <div class="header-table">
+      <h1>Lista de deputados - RJ</h1>
+
+      <%= form_with(url:'/deputies', method: 'get', local: true, class: 'search-form') do %>
+        <%= text_field_tag(:search, params[:search]) %>
+        <%= submit_tag("Pesquisar") %>
+        <% if params[:search].present? %>
+          <%= link_to 'Limpar pesquisa', deputies_path %>
+        <% end %>
+      <% end %>
+    </div>
 
     <table class="table">
       <thead>
         <tr>
+          <th scopr="col">FOTO</th>
           <th scope="col">DEPUTADO</th>
           <th scope="col">PARTIDO</th>
           <th scope="col"></th>
@@ -19,6 +30,7 @@
       <tbody>
         <% @deputies.each do |deputy| %>
           <tr>
+            <td class="avatar"><%= image_tag deputy.photo %></td>
             <td><%= deputy.name %></td>
             <td><%= deputy.party.name %></td>
             <td class="table-icon">
