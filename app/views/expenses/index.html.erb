@@ -1,11 +1,19 @@
 <div class="container-fluid">
   <header>
     <%= image_tag 'deputy_expense_logo.png' %>
-    <%= link_to 'Voltar', deputies_path, class: 'link-index' %>
+    <%= link_to 'Voltar para lista', deputies_path, class: 'link-index' %>
   </header>
 
+  <section>
+    <%= image_tag @deputy.photo %>
+    <div class="column">
+      <h6><%= @deputy.name %></h6>
+      <p><%= @deputy.party.name %></p>
+    </div>
+  </section>
+
   <div class="content">
-    <h1>Lista de despesas - <%= @deputy.name %> </h1>
+    <h1>Lista de despesas</h1>
 
     <table class="table">
       <thead>
@@ -27,6 +35,23 @@
       </tbody>
     </table>
 
-    <%= paginate @expenses, theme: 'twitter-bootstrap-4' %>
+    <%= paginate @expenses, theme: 'twitter-bootstrap-4' %>   
+  </div>
+
+  <div class="content">
+    <div class="chart-container">
+      <h4>MÊS COM MAIOR DESPESA</h4>
+      <%= column_chart @charts.higher_expense_per_month %>
+    </div>
+
+    <div class="chart-container">
+      <h4>MAIOR DESPESA DO ANO</h4>
+      <%= column_chart @charts.higher_expense_per_year %>
+    </div>
+
+    <div class="chart-container">
+      <h4>TOTAL DE DESPESAS POR MÊS</h4>
+      <%= area_chart @charts.total_expense_per_month %>
+    </div>
   </div>
 </div>
