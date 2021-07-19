@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.2'
 
 gem 'rails', '~> 6.0.3', '>= 6.0.3.7'
-gem 'sqlite3', '~> 1.4'
+gem 'pg'
 gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
@@ -12,6 +12,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'pry'
 gem "chartkick"
+gem 'groupdate'
+gem 'sidekiq'
+gem 'aws-sdk-s3', require: false
+gem 'friendly_id', '~> 5.4.0'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 gem 'bootsnap', '>= 1.4.2', require: false
