@@ -1,0 +1,8 @@
+<tr>
+  <td class="avatar"><%= image_tag deputy.photo %></td>
+  <td><%= deputy.name %></td>
+  <td><%= deputy.party.name %></td>
+  <td class="table-icon">
+    <%= link_to '<i class="far fa-eye"></i>'.html_safe, deputy_expenses_path(deputy) %>
+  </td>
+</tr>

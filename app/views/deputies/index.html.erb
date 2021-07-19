@@ -4,6 +4,8 @@
     <%= link_to 'Fazer upload do arquivo', new_upload_path, class: 'link-upload' %>
   </header>
 
+  <%= render 'shared/notifications' %>
+
   <div class="content">
     <div class="header-table">
       <h1>Lista de deputados - RJ</h1>
@@ -17,7 +19,7 @@
       <% end %>
     </div>
 
-    <table class="table">
+    <table data-channel="deputy" class="table" id='deputy-table'>
       <thead>
         <tr>
           <th scopr="col">FOTO</th>
@@ -27,21 +29,14 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody id="tbody-deputy">
         <% @deputies.each do |deputy| %>
-          <tr>
-            <td class="avatar"><%= image_tag deputy.photo %></td>
-            <td><%= deputy.name %></td>
-            <td><%= deputy.party.name %></td>
-            <td class="table-icon">
-              <%= link_to '<i class="far fa-eye"></i>'.html_safe, deputy_expenses_path(deputy) %>
-            </td>
-          </tr>
+          <%= render partial: 'deputy', locals: { deputy: deputy } %>
         <% end %>
       </tbody>
     </table>
 
-    <% if @deputies.each.size == 0 %>
+    <% if @deputies.size == 0 %>
       <div class="message-table">
         <p>Nenhum resultado encontrado</p>
       </div>

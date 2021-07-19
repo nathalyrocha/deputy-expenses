@@ -12,6 +12,8 @@ class Deputy < ApplicationRecord
   belongs_to :party
   has_many :expenses, dependent: :destroy
 
+  after_save :broadcast!
+
   def photo
     "https://www.camara.leg.br/internet/deputado/bandep/#{avatar_id}.jpg"
   end
@@ -22,6 +24,16 @@ class Deputy < ApplicationRecord
     else
       all
     end
+  end
+
+  def broadcast!
+    ActionCable.server.broadcast(
+      'deputy_channel', 
+      ApplicationController.render(
+      partial: 'deputies/deputy',
+      locals: { deputy: self }
+      )
+    )
   end
 
   private
