@@ -45,13 +45,13 @@
     </div>
 
     <div class="chart-container">
-      <h4>TOTAL DE DESPESAS NO MÊS</h4>
-      <%= area_chart @charts.total_expense_per_month %>
+      <h4>MAIOR VALOR DE DESPESA NO ANO</h4>
+      <%= column_chart @charts.higher_expense_per_year %>
     </div>
 
     <div class="chart-container">
-      <h4>MAIOR VALOR DE DESPESA NO ANO</h4>
-      <%= column_chart @charts.higher_expense_per_year %>
+      <h4>TOTAL DE DESPESAS NO MÊS</h4>
+      <%= area_chart @charts.total_expense_per_month %>
     </div>
 
     <div class="chart-container">
