@@ -10,7 +10,7 @@ class UploadsController < ApplicationController
 
     ImportExpensesJob.perform_later(@upload.id)
 
-    redirect_to deputies_path, notice: 'Aguarde enquanto carregamos os dados.'
+    redirect_to deputies_path, notice: 'Aguarde enquanto carregamos os dados...'
   end
 
   private
